@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Test</title>
+        <script src="jquery-3.4.1.js"></script>
+        <script src="percent-chart.js"></script>
+        <link rel="stylesheet" href="percent-chart.css">
+        <style>
+            #container{
+                height:100px;
+                width:100px;
+            }
+            #container .pc-text{
+                color:black;
+                font-family: "Segoe UI";
+            }
+            #container .pc-bg{
+                stroke:darkgrey;
+            }
+            #container .pc-fill{
+                stroke: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+    </body>
+    <script>
+        let options =  {
+            delay: '.2s',
+            textDuration: '.1s',
+            chartDuration: '2s',
+            easing: 'ease-in',
+            data:{
+                percent:10,
+                actual:190,
+                unit:"TRIALS"
+            },
+            enableHover:false,
+        }
+        var chart = new PercentChart("container",options)
+    </script>
+</html>
