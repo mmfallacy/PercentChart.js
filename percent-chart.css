@@ -52,8 +52,6 @@
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  font-family: "Segoe UI";
-  color: black;
 }
 
 .pchart.pc-container div.pc-text:hover .pc-num #pc-percent {
