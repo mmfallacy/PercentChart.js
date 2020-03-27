@@ -6,14 +6,6 @@ class PercentChart{
     #chartText;
     constructor(id, options){
 
-        //options syntax
-        // {
-        //     delay: String,
-        //     textDuration: String,
-        //     chartDuration: String,
-        //     easing: String,
-        // }
-        
         this.#id = id;
 
         this.delay = options.delay || '.2s';
@@ -27,10 +19,13 @@ class PercentChart{
         this.#data.actual = options.data.actual || 0;
         this.#data.unit = options.data.unit || "UNIT"
         this.enableHover = (options.enableHover != false);
+        this.direction = options.direction || "cw"
+        if(!(this.direction =="cw" || this.direction=="ccw")) throw "ParameterError: direction not either cw or ccw"
+        let dir = (this.direction=="cw")? 1:0
         let template = `
         <svg viewBox="0 0 36 36" class="pc-chart">
-            <path class="pc-bg" d="M18 2.0845a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831"/>
-            <path class="pc-fill" d="M18 2.0845  a 15.9155 15.9155 0 0 0 0 31.831 a 15.9155 15.9155 0 0 0 0 -31.831"/>
+            <path class="pc-bg" d="M18 2.0845a 15.9155 15.9155 0 0 ${dir} 0 31.831 a 15.9155 15.9155 0 0 ${dir} 0 -31.831"/>
+            <path class="pc-fill" d="M18 2.0845  a 15.9155 15.9155 0 0 ${dir} 0 31.831 a 15.9155 15.9155 0 0 ${dir} 0 -31.831"/>
         </svg>
         <div class="pc-text">
             <div class="pc-num">

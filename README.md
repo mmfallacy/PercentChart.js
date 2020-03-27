@@ -1,6 +1,7 @@
 # PercentChart.js
 
 PercentChart.js is a Javascript library for creating circular percent graphs.
+
 Credits to https://codepen.io/sergiopedercini/pen/jmKdbj/ for circular svg
 ## Installation
 Download the js and css files and include in source code
@@ -22,6 +23,7 @@ let options =  {
                 unit:"UNIT"
             },
             enableHover:true,
+            direction: "ccw"
         }
 var chart = new PercentChart("container", options)
 ```
